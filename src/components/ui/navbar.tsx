@@ -4,6 +4,20 @@ import Link from "next/link";
 import { Button } from "./button";
 import { useState } from "react";
 import Image from "next/image";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Label } from "./label";
+import { HomeIcon } from '@radix-ui/react-icons'
+import { Separator } from "./separator";
+
+
 
 
 export function Navbar () {
@@ -94,14 +108,75 @@ export function Navbar () {
 
         </div>
 
-        <Image
+        <Sheet>
+          <SheetTrigger>
+          <Image
+              src={"/bg-menu.png"}
+              width={30}
+              height={30}
+              className="flex md:hidden cursor-pointer"
+              // onClick={toggleMenu}
+              alt="menu icon"
+            />
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Menu</SheetTitle>
+              <SheetDescription>
+              </SheetDescription>
+            </SheetHeader>
+            <Separator />
+             <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-0">
+              {/* <Image
                 src={openMenu ? "/close.png" : "/bg-menu.png"}
                 width={30}
                 height={30}
                 className="flex md:hidden cursor-pointer"
                 onClick={toggleMenu}
                 alt="menu icon"
-            />
+            /> */}
+                {/* <Label htmlFor="name" className="text-right">
+                  Name
+                </Label> */}
+                <HomeIcon height={25} width={25} />
+                <SheetClose asChild>
+                  <Link href="/" className="text-xl col-span-3" >
+                    Home
+                  </Link>
+                </SheetClose>
+                {/* <Input id="name" value="Pedro Duarte" className="col-span-3" /> */}
+              </div>
+              <div className="grid grid-cols-4 items-center gap-0">
+                <HomeIcon height={25} width={25} />
+                <SheetClose asChild>
+                  <Link href="/" className="text-xl col-span-3" >
+                    Page One
+                  </Link>
+                </SheetClose>
+                {/* <Input id="username" value="@peduarte" className="col-span-3" /> */}
+              </div>
+              <div className="grid grid-cols-4 items-center gap-0">
+                <HomeIcon height={25} width={25} />
+                <SheetClose asChild>
+                  <Link href="/" className="text-xl col-span-3" >
+                    Page Two
+                  </Link>
+                </SheetClose>
+                {/* <Input id="username" value="@peduarte" className="col-span-3" /> */}
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
+
+        {/* <Image
+                src={openMenu ? "/close.png" : "/bg-menu.png"}
+                width={30}
+                height={30}
+                className="flex md:hidden cursor-pointer"
+                onClick={toggleMenu}
+                alt="menu icon"
+            /> */}
       </div>
     </div>
     )
