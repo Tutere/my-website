@@ -66,13 +66,13 @@ export function Navbar () {
               alt="menu icon"
             />
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="bg-gray-800 text-white border-gray-500">
             <SheetHeader>
-              <SheetTitle>Menu</SheetTitle>
+              <SheetTitle className="text-white">Menu</SheetTitle>
               <SheetDescription>
               </SheetDescription>
             </SheetHeader>
-            <Separator />
+            <Separator className="bg-gray-500"/>
              <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-0">
                 <HomeIcon height={25} width={25} />
