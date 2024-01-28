@@ -81,31 +81,6 @@ export function Navbar () {
               </Link>
             </li>
           </ul>
-
-
-          {/* <div className="flex items-center gap-2">
-            <Link href={"/"} className="text-white" >
-              <Button variant={"ghost"}>
-                Home
-              </Button>
-            </Link>
-            <Link href={"/monthlyReport"} className="text-white">
-              <Button variant={"ghost"}>
-                Page 2
-              </Button>
-            </Link>
-            <Link href={"/emailPreferences"} className="text-white">
-              <Button variant={"ghost"}>
-                Page 3
-              </Button>
-            </Link>
-            <Link href={"/newProject"} className="text-white">
-              <Button variant={"ghost"}>
-                Page 4
-              </Button>
-            </Link>
-          </div> */}
-
         </div>
 
         <Sheet>
