@@ -16,7 +16,9 @@ export default function ProjectsSection() {
             key={index}
             title={project.title} 
             img={project.img} 
-            description={project.description} 
+            description={project.description}
+            siteUrl={project.siteUrl}
+            githubUrl={project.githubUrl}
             />
           ))}
         </div>
