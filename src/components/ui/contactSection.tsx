@@ -62,21 +62,26 @@ export default function ContactSection() {
     console.log(process.env.NEXT_PUBLIC_PUBLIC_KEY);
     setEmailSending(true);
 
-    emailjs.send(process.env.NEXT_PUBLIC_SERVICE_ID!,process.env.NEXT_PUBLIC_TEMPLATE_ID!, 
-      {
-        from_name: values.name,
-        subject: values.subject,
-        from_email: values.email,
-        message: values.message,
-      },
-      process.env.NEXT_PUBLIC_PUBLIC_KEY!)
-        .then((result) => {
-            alert("Email was sent!");
-            setEmailSent(true);
-        }, (error) => {
-            console.log(error.text);
-            alert("Error:" + error.text);
-        });
+    if (process.env.NEXT_PUBLIC_SERVICE_ID 
+      && process.env.NEXT_PUBLIC_TEMPLATE_ID 
+      && process.env.NEXT_PUBLIC_PUBLIC_KEY) {
+        emailjs.send(process.env.NEXT_PUBLIC_SERVICE_ID,process.env.NEXT_PUBLIC_TEMPLATE_ID, 
+          {
+            from_name: values.name,
+            subject: values.subject,
+            from_email: values.email,
+            message: values.message,
+          },
+          process.env.NEXT_PUBLIC_PUBLIC_KEY)
+            .then((result) => {
+                alert("Email was sent!");
+                setEmailSent(true);
+            }, (error) => {
+                console.log(error.text);
+                alert("Error:" + error.text);
+            });  
+    }
+
 
   }
 
