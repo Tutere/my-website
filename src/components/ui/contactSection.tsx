@@ -57,16 +57,19 @@ export default function ContactSection() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
+    console.log(process.env.NEXT_PUBLIC_TEMPLATE_ID);
+    console.log(process.env.NEXT_PUBLIC_PUBLIC_KEY);
     setEmailSending(true);
 
-    emailjs.send("service_bdlh1wm","template_h58pmfe", 
+    emailjs.send(process.env.NEXT_PUBLIC_SERVICE_ID!,process.env.NEXT_PUBLIC_TEMPLATE_ID!, 
       {
         from_name: values.name,
         subject: values.subject,
         from_email: values.email,
         message: values.message,
       },
-      "ZyIRYHSvCLfZ4nSsl")
+      process.env.NEXT_PUBLIC_PUBLIC_KEY!)
         .then((result) => {
             alert("Email was sent!");
             setEmailSent(true);
@@ -108,7 +111,7 @@ export default function ContactSection() {
                   tuteredurie@hotmail.com
                 </PopoverContent>
               </Popover>
-              <Link href={"Linkedin.com"}>
+              <Link href={"https://www.linkedin.com/in/tutere-durie/"} target="blank">
                 <Image 
                 src={LinkedinImg}
                 alt="Linkedin Icon"
