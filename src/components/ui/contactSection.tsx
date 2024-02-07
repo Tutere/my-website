@@ -8,6 +8,7 @@ import { Input } from "./input"
 import { Button } from "./button"
 import GithubImg from "/public/github-icon.svg"
 import LinkedinImg from "/public/linkedin-icon.svg"
+import tickImg from "/public/check-square.svg"
 import PhoneImg from "/public/phone-icon.svg"
 import EmailImg from "/public/email.svg"
 import Link from "next/link"
@@ -17,6 +18,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import emailjs from '@emailjs/browser';
+import { useState } from "react"
 
  
 const formSchema = z.object({
@@ -45,12 +48,33 @@ export default function ContactSection() {
         message: "",
     },
   })
- 
+
+  const [emailSent,setEmailSent] = useState(false);
+  const [emailSending,setEmailSending] = useState(false);
+
   // 2. Define a submit handler.
   function contactformSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values)
+    console.log(values);
+    setEmailSending(true);
+
+    emailjs.send("service_bdlh1wm","template_h58pmfe", 
+      {
+        from_name: values.name,
+        subject: values.subject,
+        from_email: values.email,
+        message: values.message,
+      },
+      "ZyIRYHSvCLfZ4nSsl")
+        .then((result) => {
+            alert("Email was sent!");
+            setEmailSent(true);
+        }, (error) => {
+            console.log(error.text);
+            alert("Error:" + error.text);
+        });
+
   }
 
 
@@ -61,7 +85,7 @@ export default function ContactSection() {
                 Contact Me
             </h2>
         </div>
-        <div className="grid md:grid-cols-2 my-5 md:my-5 gap-4">
+        <div className="grid md:grid-cols-2 my-5 md:my-5 gap-6">
           <div className="text-white mb-4">
             <h5 className="my-4 text-xl font-bold">Let's Connect</h5>
             <p className="mb-4 max-w-md">
@@ -106,7 +130,19 @@ export default function ContactSection() {
               </Popover>
             </div>
           </div>
-          <div>
+          {emailSent ? (
+            <div className="flex flex-col md:items-center gap-5">
+              <Image 
+                className=""
+                src={tickImg}
+                alt="Tick Icon"
+              />
+              <p className="text-white">
+                Thanks for reaching out, your email was sent! I'll be in touch soon {":)"}
+              </p>
+            </div>
+          ) :(
+            <div>
               <Form {...form}>
                   <form 
                   onSubmit={form.handleSubmit(contactformSubmit)} 
@@ -166,12 +202,14 @@ export default function ContactSection() {
                       </FormItem>
                     }} 
                   />
-                  <Button type="submit" className="w-full bg-blue-500 mt-4">
-                    Submit
+                  <Button type="submit" className="w-full bg-blue-500 mt-4" disabled={emailSending}>
+                  {emailSending ? "Sending Email..." : " Send Email"}
                   </Button>
                   </form>
               </Form>
-          </div>
+            </div>
+          )}
+          
         </div>
       </section>
     )
