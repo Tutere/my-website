@@ -23,9 +23,9 @@ export function Navbar () {
     return (
     <div className="sticky top-0 z-10">
       <div className="flex items-center justify-between pt-6 pb-3 px-10 bg-gray-800 h-[70px] border-b border-gray-500 ">
-        <div className="flex items-center">
+        <div className="flex items-center md:mx-auto md:pr-[590px]">
           <Link href={"/"} >
-            <h1 className="text-xl font-bold text-white cursor-pointer">
+            <h1 className="text-xl font-bold text-white cursor-pointer text-nowrap">
               Tutere Durie
             </h1>
           </Link>
