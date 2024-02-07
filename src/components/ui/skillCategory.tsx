@@ -24,7 +24,7 @@ export default function SkillCategory({icon, name, skills, tags}: SkillSectionPr
           <h2 className="text-white">{name}</h2>
           <div className="flex flex-wrap gap-1 max-w-52">
             {skills.map((skill,index) => (
-            <Badge variant={"secondary"}>
+            <Badge key={index}  variant={"secondary"}>
               {skill}
             </Badge>
             ))}

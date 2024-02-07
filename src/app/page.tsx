@@ -1,5 +1,6 @@
 import AboutSection from '@/components/ui/aboutSection'
 import { Button } from '@/components/ui/button'
+import ContactSection from '@/components/ui/contactSection'
 import { Navbar } from '@/components/ui/navbar'
 import ProjectsSection from '@/components/ui/projectsSection'
 import WelcomeSection from '@/components/ui/welcomeSection'
@@ -14,6 +15,7 @@ export default function Home() {
         <WelcomeSection />
         <AboutSection />
         <ProjectsSection />
+        <ContactSection />
       </div>
     </main>
   )
