@@ -19,7 +19,7 @@ export default function AboutSection() {
       <section className="py-16">
         <div className="flex flex-col items-center">
         <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">About Me</h2>
-        <p className="text-base lg:text-lg text-white text-centre max-w-5xl">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt 
+        <p className="text-base lg:text-lg text-white text-centre">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt 
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem 
           ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute 
           iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

@@ -96,7 +96,7 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 my-5 md:my-5 gap-6">
           <div className="text-white mb-4">
             <h5 className="my-4 text-xl font-bold">Let's Connect</h5>
-            <p className="mb-4 max-w-md">
+            <p className="mb-4 max-w-lg">
               {" "}
               Feel free to send a message or reach out through the various methods below. Whether you have a question or just want to say hi, my inbox 
               is always open and I'll be happy to get back to you {" :)"}
@@ -154,14 +154,14 @@ export default function ContactSection() {
               <Form {...form}>
                   <form 
                   onSubmit={form.handleSubmit(contactformSubmit)} 
-                  className="max-w-md w-full flex flex-col gap-4"
+                  className=" w-full flex flex-col gap-4"
                   >
-                    <div className="flex flex-col gap-4 md:flex-row md:justify-between">
+                    <div className="flex flex-col gap-10 md:flex-row md:justify-between">
                       <FormField 
                         control={form.control} 
                         name="name" 
                         render={({field}) =>{
-                          return <FormItem>
+                          return <FormItem className="flex-grow">
                             <FormLabel className="text-white">Name</FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your name" {...field} />
@@ -174,7 +174,7 @@ export default function ContactSection() {
                         control={form.control} 
                         name="email" 
                         render={({field}) =>{
-                          return <FormItem>
+                          return <FormItem className="flex-grow">
                             <FormLabel className="text-white">Email</FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your email address" {...field} />

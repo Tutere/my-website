@@ -8,7 +8,7 @@ export default function WelcomeSection() {
       <section className="mb-28">
         <div className="grid grid-cols-1 sm:grid-cols-12">
             <div className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
-                <h1 className="text-white mb-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+                <h1 className="text-white mb-3 text-4xl sm:text-5xl lg:text-8xl font-extrabold">
                     <div className="text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-green-500">Kia ora, I'm{" "}</div>
                     <TypeAnimation
                         sequence={[

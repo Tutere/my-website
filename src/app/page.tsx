@@ -11,7 +11,7 @@ export default function Home() {
     // flex and flex col??
     <main className='flex flex-col min-h-screen bg-gray-800'> 
       <Navbar />
-      <div className="mt-24 mx-auto py-3 px-10">
+      <div className="container mt-24 mx-auto py-3 px-10">
         <WelcomeSection />
         <AboutSection />
         <ProjectsSection />
