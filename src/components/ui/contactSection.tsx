@@ -95,11 +95,11 @@ export default function ContactSection() {
         </div>
         <div className="grid md:grid-cols-2 my-5 md:my-5 gap-6">
           <div className="text-white mb-4">
-            <h5 className="my-4 text-xl font-bold">Let's Connect</h5>
+            <h5 className="my-4 text-xl font-bold">Let&apos;s Connect</h5>
             <p className="mb-4 max-w-lg">
               {" "}
               Feel free to send a message or reach out through the various methods below. Whether you have a question or just want to say hi, my inbox 
-              is always open and I'll be happy to get back to you {" :)"}
+              is always open and I&apos;ll be happy to get back to you {" :)"}
             </p>
             <div className="flex flex-row gap-2">
               <Popover>
@@ -110,7 +110,7 @@ export default function ContactSection() {
                         />
                   </PopoverTrigger>
                 <PopoverContent
-                  className="w-fit h-fit"
+                  className="w-fit h-fit ml-10"
                   side="top"
                 >
                   tuteredurie@hotmail.com
@@ -146,7 +146,7 @@ export default function ContactSection() {
                 alt="Tick Icon"
               />
               <p className="text-white">
-                Thanks for reaching out, your email was sent! I'll be in touch soon {":)"}
+                Thanks for reaching out, your email was sent! I&apos;ll be in touch soon {":)"}
               </p>
             </div>
           ) :(
@@ -156,7 +156,7 @@ export default function ContactSection() {
                   onSubmit={form.handleSubmit(contactformSubmit)} 
                   className=" w-full flex flex-col gap-4"
                   >
-                    <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+                    <div className="flex flex-col gap-5 md:flex-row md:justify-between">
                       <FormField 
                         control={form.control} 
                         name="name" 
